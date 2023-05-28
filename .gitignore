@@ -15,6 +15,3 @@ target/
 # Editor-specific temporary files
 *~
 .vscode/
-
-# macOS specific files
-.DS_Store
