@@ -1,6 +1,7 @@
 package github.lemuelsousa.cardapio.entity;
 
 import github.lemuelsousa.cardapio.DTO.FoodRequestDTO;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,12 +23,13 @@ public class Food {
     @Id @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String imageUrl;
+    @Column(columnDefinition = "TEXT")
+    private String image;
     private Integer price;
 
     public Food( FoodRequestDTO data){
         this.title = data.title();
-        this.imageUrl = data.imageUrl();
+        this.image = data.image();
         this.price = data.price();
     }
 
