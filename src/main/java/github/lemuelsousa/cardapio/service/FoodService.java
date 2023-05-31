@@ -16,11 +16,9 @@ public class FoodService {
     @Autowired
     private FoodRepository foodRepository;
 
+
     public void saveFood(FoodRequestDTO data){
-        Food foodData = new Food(data);
-        foodRepository.save(foodData);
-        
-        return;
+       foodRepository.save(new Food(data));
     }
 
     public List<FoodResponseDTO> findAll(){
