@@ -1,5 +1,5 @@
 package github.lemuelsousa.cardapio.DTO;
 
-public record FoodRequestDTO( String title, String imageUrl, Integer price){
+public record FoodRequestDTO( String title, String image, Integer price){
     
 }
