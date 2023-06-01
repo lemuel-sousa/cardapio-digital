@@ -1,10 +1,21 @@
 package github.lemuelsousa.cardapio.DTO;
 
 import github.lemuelsousa.cardapio.entity.Food;
+import lombok.Getter;
 
-public record FoodResponseDTO( Long id, String title, String image, Integer price) {
+@Getter
+public class FoodResponseDTO {
+
+    private Long id;
+    private String title;
+    private String image;
+    private Integer price;
 
     public FoodResponseDTO(Food food){
-        this(food.getId(), food.getTitle(), food.getImage(), food.getPrice());
+        this.id = food.getId();
+        this.title = food.getTitle();
+        this.image = food.getImage();
+        this.price = food.getPrice();
     }
+
 }
