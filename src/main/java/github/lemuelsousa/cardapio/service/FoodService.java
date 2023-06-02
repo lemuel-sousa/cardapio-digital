@@ -6,9 +6,11 @@ import github.lemuelsousa.cardapio.DTO.FoodRequestDTO;
 import github.lemuelsousa.cardapio.DTO.FoodResponseDTO;
 
 public interface FoodService {
-    
-    List<FoodResponseDTO> findAll();
+
+    String delete(Long id);
 
     FoodResponseDTO register(FoodRequestDTO foodDTO);
+    
+    List<FoodResponseDTO> findAll();
 
 }

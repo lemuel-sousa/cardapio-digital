@@ -16,13 +16,19 @@ import lombok.RequiredArgsConstructor;
 @Primary
 @RequiredArgsConstructor
 public class FoodServiceImpl implements FoodService {
-    
+
     private final FoodRepository foodRepository;
 
     private final FoodMapper foodMapper;
 
     @Override
-    public FoodResponseDTO register(FoodRequestDTO foodDTO){
+    public String delete(Long id) {
+        foodRepository.deleteById(id);
+        return "Successfully food deleted!";
+    }
+
+    @Override
+    public FoodResponseDTO register(FoodRequestDTO foodDTO) {
 
         Food newFood = foodMapper.toFood(foodDTO);
 
@@ -30,7 +36,7 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
-    public List<FoodResponseDTO> findAll(){
+    public List<FoodResponseDTO> findAll() {
         return foodMapper.toFoodsDTO(foodRepository.findAll());
     }
 
